@@ -43,20 +43,7 @@ jobs:
         run: |
           CHECKSUM=$(md5sum SpoilerGuardLite.zip | awk '{print $1}')
           VERSION=${{ steps.ver.outputs.version }}
-          python3 - "$VERSION" "$CHECKSUM" <<'PY'
-import json, datetime, sys
-version, checksum = sys.argv[1], sys.argv[2]
-p='manifest.json'
-d=json.load(open(p))
-d[0]['versions'][0].update({
-  "version": version,
-  "sourceUrl": f"https://github.com/Subject412/SpoilerGuard/releases/download/v{version}/SpoilerGuardLite.zip",
-  "checksum": checksum,
-  "timestamp": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-})
-json.dump(d, open(p,'w'), indent=2)
-open(p,'a').write('\n')
-PY
+          python3 .github/scripts/update_manifest.py "$VERSION" "$CHECKSUM"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add manifest.json
