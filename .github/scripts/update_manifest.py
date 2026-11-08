@@ -11,4 +11,3 @@ d[0]["versions"][0].update({
 })
 json.dump(d, open(p, "w"), indent=2)
 open(p, "a").write("\n")
-EOF
