@@ -21,8 +21,8 @@
         <PackageProjectUrl>https://github.com/Subject412/SpoilerGuard</PackageProjectUrl>
         <Authors>Subject412</Authors>
         <Copyright>Copyright (c) Subject412</Copyright>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-        <FileVersion>1.0.0.0</FileVersion>
+        <AssemblyVersion>1.0.0.1</AssemblyVersion>
+        <FileVersion>1.0.0.1</FileVersion>
         <RootNamespace>Jellyfin.Plugin.SpoilerGuard</RootNamespace>
         <AssemblyName>Jellyfin.Plugin.SpoilerGuard</AssemblyName>
     </PropertyGroup>
